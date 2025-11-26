@@ -51,9 +51,7 @@ public class UserAttend {
         this.lecName = lecture.getLecName();
         this.credit = lecture.getCredit();
         this.lecType = lecture.getLecType();
-        this.openCollege = lecture.getOpenCollege();
         this.openDepart = lecture.getOpenDepart();
-        this.professor = lecture.getProfessor();
         this.language = lecture.getLanguage();
     }
     public void changeGrade(String newGrade) {

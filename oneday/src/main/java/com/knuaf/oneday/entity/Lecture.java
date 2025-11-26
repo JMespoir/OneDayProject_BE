@@ -25,13 +25,9 @@ public class Lecture {
     @Column(name = "lec_type")
     private String lecType;    // 이수구분 (전필, 교양 등)
 
-    @Column(name = "open_college")
-    private String openCollege;
-
     @Column(name = "open_depart")
     private String openDepart;
 
-    private String professor;
     private String language;
 
     // grade는 강의 목록에서는 '대상 학년'으로 쓰일 것 같네요.

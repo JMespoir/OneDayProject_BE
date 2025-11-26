@@ -23,10 +23,8 @@ public class CourseService {
     @Transactional
     public Long registerCourse(String studentId, CourseRegisterDto request) {
 
-        // ★ 1. 들어온 ID를 8자리로 자르기 (COMP0001-001 -> COMP0001)
-        String realLecId = parseLecId(request.getLecId());
 
-        String tableName = LectureTableNameProvider.getTableName(request.getSemester());
+        String tableName = "lecture_list_2025"+request.getSemester();
 
         // ★ 2. 쿼리 파라미터에 자른 ID(realLecId) 사용
         String sql = "SELECT * FROM " + tableName + " WHERE lec_num = :lecId"; // 아까 고친 lec_num
@@ -34,7 +32,7 @@ public class CourseService {
         Lecture lecture = null;
         try {
             lecture = (Lecture) em.createNativeQuery(sql, Lecture.class)
-                    .setParameter("lecId", realLecId) // ★ 여기도 realLecId 넣기
+                    .setParameter("lecId", request.getLecId()) // ★ 여기도 realLecId 넣기
                     .getSingleResult();
         } catch (Exception e) {
             throw new IllegalArgumentException("해당 학기에 존재하지 않는 과목입니다.");
@@ -43,7 +41,7 @@ public class CourseService {
         UserAttend newHistory = UserAttend.builder()
                 .studentId(studentId)
                 .lecture(lecture)
-                .receivedGrade(request.getGrade())
+                .receivedGrade(request.getReceived_grade())
                 .build();
 
         return userAttendRepository.save(newHistory).getIdx();
@@ -53,11 +51,8 @@ public class CourseService {
     @Transactional
     public void updateCourseGrade(String studentId, CourseUpdateDto request) {
 
-        // ★ 1. 여기서도 8자리로 자르기
-        String realLecId = parseLecId(request.getLecId());
-
         // ★ 2. 조회할 때 자른 ID 사용
-        UserAttend userAttend = userAttendRepository.findByStudentIdAndLecId(studentId, realLecId)
+        UserAttend userAttend = userAttendRepository.findByStudentIdAndLecId(studentId, request.getLecId())
                 .orElseThrow(() -> new IllegalArgumentException("신청하지 않은 과목입니다."));
 
         userAttend.changeGrade(request.getGrade());
@@ -67,10 +62,7 @@ public class CourseService {
     @Transactional
     public void deleteCourse(String studentId, String rawLecId) {
 
-        // ★ 1. 여기서도 자르기
-        String realLecId = parseLecId(rawLecId);
-
-        UserAttend userAttend = userAttendRepository.findByStudentIdAndLecId(studentId, realLecId)
+        UserAttend userAttend = userAttendRepository.findByStudentIdAndLecId(studentId, rawLecId)
                 .orElseThrow(() -> new IllegalArgumentException("삭제할 수강 내역이 없습니다."));
 
         userAttendRepository.delete(userAttend);
