@@ -7,7 +7,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "Advcomp")
+@Table(name = "advcomp")
 public class Advcomp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,5 +17,5 @@ public class Advcomp {
     private Integer abeek_general;//abeek 전문교양
     private Integer abeek_total; //abeek 총 학점
     private Integer base_major; // 전공기반
-    private Integer engin_major; // 공학 전공
+    private Integer engin_major; // 공학전공
 }
