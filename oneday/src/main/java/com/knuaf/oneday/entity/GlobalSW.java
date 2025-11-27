@@ -6,6 +6,7 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
+@Table(name = "globalsw")
 public class GlobalSW {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
