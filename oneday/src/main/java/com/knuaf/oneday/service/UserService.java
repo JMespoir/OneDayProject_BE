@@ -41,7 +41,7 @@ public class UserService implements UserDetailsService {
         user.setMajor(request.getMajor());
         User savedUser = userRepository.save(user);
 
-        if(user.getMajor()=="심화컴퓨팅전공") {
+        if(user.getMajor().equals("심화컴퓨팅전공")) {
             Advcomp adv = new Advcomp();
             adv.setStudentId(savedUser.getStudentId());
 
