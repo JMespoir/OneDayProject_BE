@@ -5,6 +5,7 @@ import com.knuaf.oneday.dto.CourseUpdateDto;
 import com.knuaf.oneday.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -41,4 +42,6 @@ public class CourseController {
         courseService.deleteCourse(tempStudentId, lecId);
         return ResponseEntity.ok("수강 취소(삭제)가 완료되었습니다.");
     }
+
+
 }
