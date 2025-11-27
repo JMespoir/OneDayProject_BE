@@ -52,6 +52,9 @@ public class UserService implements UserDetailsService {
 
             advcompRepository.save(adv);
         }
+        else if(user.getMajor().equals("글로벌SW융합전공")) {
+
+        }
         return savedUser;
     }
 
