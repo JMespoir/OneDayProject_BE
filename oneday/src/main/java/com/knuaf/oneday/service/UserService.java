@@ -5,6 +5,7 @@ import com.knuaf.oneday.dto.MypageRequest;
 import com.knuaf.oneday.entity.Advcomp;
 import com.knuaf.oneday.entity.GlobalSW;
 import com.knuaf.oneday.entity.User;
+import com.knuaf.oneday.entity.UserAttend;
 import com.knuaf.oneday.repository.AdvCompRepository;
 import com.knuaf.oneday.repository.GlobalSWRepository;
 import com.knuaf.oneday.repository.UserRepository;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Lazy;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
