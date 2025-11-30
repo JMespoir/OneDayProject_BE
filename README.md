@@ -14,7 +14,7 @@
 </td>
 <td>
 
-|                  JaeMin Park                   |
+|                  HyunWook Kwak                   |
 | :------------------------------------------------: |
 | <img width="240px" src="https://avatars.githubusercontent.com/Woogie333" /> |
 |     [@woogie333](https://github.com/woogie333) |
@@ -23,7 +23,7 @@
 </td>
 <td>
 
-|           HyunWook Kwak           |
+|           JaeMin Park          |
 | :---------------------------: |
 | <img width="240px" src="https://avatars.githubusercontent.com/Jmespoir" /> |
 |     [@jmespoir](https://github.com/JMespoir)       |
