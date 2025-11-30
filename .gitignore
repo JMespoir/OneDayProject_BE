@@ -30,4 +30,4 @@ build/
 Thumbs.db
 
 # --- [추가] pem key 파일 ---
-.pem
+*.pem
