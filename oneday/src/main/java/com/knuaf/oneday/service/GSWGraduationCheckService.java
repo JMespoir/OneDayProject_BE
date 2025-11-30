@@ -215,9 +215,9 @@ public class GSWGraduationCheckService {
     }
 
     private Track determineTrack(String specificMajor) {
-        if (specificMajor.equals("해외복수학위")) return Track.OVERSEAS_DEGREE;
-        if (specificMajor.equals("학석사연계")) return Track.MASTER_LINK;
-        if (specificMajor.equals("다중전공")) return Track.MULTI_MAJOR; // DB에 "다중전공"이라고 저장된다고 가정
+        if (specificMajor.contains("해외복수학위")) return Track.OVERSEAS_DEGREE;
+        if (specificMajor.contains("학석사연계")) return Track.MASTER_LINK;
+        if (specificMajor.contains("다중전공")) return Track.MULTI_MAJOR; // DB에 "다중전공"이라고 저장된다고 가정
 
         // 예외: 융합/복수/부전공 등으로 저장된 경우도 다중전공으로 처리
         if (specificMajor.contains("전공")) return Track.MULTI_MAJOR;
