@@ -74,6 +74,7 @@ public class CreditService {
             else if ("교양필수".equals(type)) general += credit;
             else if ("교양선택".equals(type)) general += credit;
             else if ("일반선택".equals(type)) etcSum += credit;
+            //else if ("다중전공".equals(type)) multipleSum += credit;
            // else if ("복수전공".equals(type)) multipleSum += credit;
            // else if ("부전공".equals(type)) multipleSum += credit;
            // else if ("융합전공".equals(type)) multipleSum += credit;
@@ -139,6 +140,7 @@ public class CreditService {
             else if ("복수전공".equals(type)) multipleSum += credit;
             else if ("부전공".equals(type)) multipleSum += credit;
             else if ("융합전공".equals(type)) multipleSum += credit;
+            else if ("다중전공".equals(type)) multipleSum += credit;
             else etcSum += credit;
 
             if(design.equals("ITEC0401")||design.equals("ITEC0402")){
