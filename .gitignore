@@ -28,3 +28,6 @@ build/
 # --- [추가] Mac/Windows 시스템 파일 ---
 .DS_Store
 Thumbs.db
+
+# --- [추가] pem key 파일 ---
+.pem
